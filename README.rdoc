@@ -22,6 +22,11 @@ Compile RomanNmbl.java:
 
   javac -classpath /usr/share/java/itext.jar RomanNmbl.java
 
+Note: If your compiler can't find com.lowagie.text.*, try to modify import lines of RomanNmbl.java:
+
+  import com.itextpdf.text.DocumentException;
+  import com.itextpdf.text.pdf.*;
+
 == Usage
   java -classpath /usr/share/java/itext.jar:. RomanNmbl <input.pdf> <output.pdf> <end-of-front-matter-page-number>
 
@@ -64,3 +69,12 @@ Copyright 2012 Kenshi Muto.
   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
   DEALINGS IN THE SOFTWARE.
+
+= 日本語の説明 (Note in Japanese)
+PDFの「前付」部分のラベルをローマ数字に変更します。
+
+JavaおよびiTextライブラリが必要です。
+
+コンパイル後、次のように実行します。
+
+  java -classpath /usr/share/java/itext.jar:. RomanNmbl 変換元PDF 変換先PDF 前付の総ページ数
