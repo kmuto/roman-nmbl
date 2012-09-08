@@ -1,0 +1,66 @@
+= Roman Nombre Setter
+
+Roman Nombre Setter allows to modify page number (nombre) labels of PDF to Roman.
+
+== Overview
+
+When you combine PDFs to one PDF file by using pdftk, page number label will always be initialized from Arabic style label, page number 1.
+
+Because Most books use Roman style (i, ii, iii, ...) for page numbers of their front matter, this behaviour is unpleasant.
+
+Roman Nombre Setter modifies PDF to set Roman style label for the front matter.
+
+== Install
+Roman Nombre Setter is implemented with Java and iText library.
+
+* Java (OpenJDK): http://openjdk.java.net/
+* iText Library: http://itextpdf.com/
+
+In Debian GNU/Linux, you can install them by 'apt-get install openjdk-6-jdk libitext-java'.
+
+Compile RomanNmbl.java:
+
+  javac -classpath /usr/share/java/itext.jar RomanNmbl.java
+
+== Usage
+  java -classpath /usr/share/java/itext.jar:. RomanNmbl <input.pdf> <output.pdf> <end-of-front-matter-page-number>
+
+For example,
+
+  java -classpath /usr/share/java/itext.jar:. RomanNmbl A.pdf B.pdf 4
+
+It makes like:
+
+  A.pdf  B.pdf
+  -------------
+  1      i
+  2      ii
+  3      iii
+  4      iv
+  5      1
+  6      2
+  7      3
+  ...
+
+== Copyright
+Copyright 2012 Kenshi Muto.
+
+== License
+
+  Permission is hereby granted, free of charge, to any person obtaining a
+  copy of this software and associated documentation files (the "Software"),
+  to deal in the Software without restriction, including without limitation
+  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+  and/or sell copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+  SOFTWARE IN THE PUBLIC INTEREST, INC. BE LIABLE FOR ANY CLAIM, DAMAGES OR
+  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  DEALINGS IN THE SOFTWARE.
