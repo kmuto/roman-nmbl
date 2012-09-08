@@ -26,6 +26,8 @@
  */
 import java.lang.*;
 import java.io.*;
+
+/* FIXME: Please replace them with com.itextpdf if you have another iText version. */
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.pdf.*;
 
@@ -53,6 +55,7 @@ class RomanNmbl {
             stamper.getWriter().setPageLabels(labels);
             stamper.close();
         } catch (IOException e) {
+            // FIXME: Better error handling.
             System.out.println(e);
             return;
         } catch (DocumentException e) {
