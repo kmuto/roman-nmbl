@@ -16,16 +16,11 @@ Roman Nombre Setter is implemented with Java and iText library.
 * Java (OpenJDK): http://openjdk.java.net/
 * iText Library: http://itextpdf.com/
 
-In Debian GNU/Linux, you can install them by 'apt-get install openjdk-6-jdk libitext-java'.
+In Debian GNU/Linux 11, you can install them by 'apt-get install openjdk-11-jdk libitext5-java'.
 
 Compile RomanNmbl.java:
 
-  javac -classpath /usr/share/java/itext.jar RomanNmbl.java
-
-Note: If your compiler can't find com.lowagie.text.*, try to modify import lines of RomanNmbl.java:
-
-  import com.itextpdf.text.DocumentException;
-  import com.itextpdf.text.pdf.*;
+  javac -classpath /usr/share/java/itext5.jar RomanNmbl.java
 
 == Usage
   java -classpath /usr/share/java/itext.jar:. RomanNmbl <input.pdf> <output.pdf> <end-of-front-matter-page-number>
@@ -48,7 +43,7 @@ It makes like:
   ...
 
 == Copyright
-Copyright 2012 Kenshi Muto.
+Copyright 2012-2019 Kenshi Muto.
 
 == License
 
@@ -77,4 +72,4 @@ JavaおよびiTextライブラリが必要です。
 
 コンパイル後、次のように実行します。
 
-  java -classpath /usr/share/java/itext.jar:. RomanNmbl 変換元PDF 変換先PDF 前付の総ページ数
+  java -classpath /usr/share/java/itext5.jar:. RomanNmbl 変換元PDF 変換先PDF 前付の総ページ数

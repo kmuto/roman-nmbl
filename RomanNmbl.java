@@ -28,8 +28,8 @@ import java.lang.*;
 import java.io.*;
 
 /* FIXME: Please replace them with com.itextpdf if you have another iText version. */
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.*;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.*;
 
 class RomanNmbl {
     public static void main(String args[]) {
